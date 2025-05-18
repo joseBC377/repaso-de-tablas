@@ -17,17 +17,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Curso {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int id;
-@Column(nullable = false, length = 150)
-private String nombre;
-//Relacion muchos a muchos es una tabla intermedia se usa uando una entidad puede estar relacionada con muchas otras y viceversa. Por ejemplo:
-@ManyToMany
-@JoinTable(
-    name = "curso-profesor",
-    joinColumns =@JoinColumn(name ="curso_id"),
-    inverseJoinColumns = @JoinColumn(name ="profesor_id")
-)
-private List<Profesor> profesor;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(nullable = false, length = 150)
+    private String nombre;
+    // Relacion muchos a muchos es una tabla intermedia se usa uando una entidad
+    // puede estar relacionada con muchas otras y viceversa. 
+    @ManyToMany
+    @JoinTable(name = "curso-profesor",
+     joinColumns = @JoinColumn(name = "curso_id"),
+     inverseJoinColumns = @JoinColumn(name = "profesor_id"))
+    private List<Profesor> profesor;
 }
