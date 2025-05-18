@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +24,10 @@ private String nombre;
 @OneToOne
 @JoinColumn(name ="direccion_id")
 private Direccion direccion;
-//private Curso curso_id;
+//Relación de muchos a uno
+@ManyToOne
+@JoinColumn(name = "curso_id")
+private Curso curso;
 
 
 }
