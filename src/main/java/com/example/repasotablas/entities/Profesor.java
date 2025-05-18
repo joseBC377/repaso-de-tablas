@@ -1,9 +1,12 @@
 package com.example.repasotablas.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,4 +18,6 @@ public class Profesor {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 private String nombre;
+@ManyToMany(mappedBy = "profesor")
+private List<Curso> curso;
 }
