@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,9 +19,11 @@ public class Estudiante {
 private int id;
 @Column(nullable = false,length = 150)
 private String nombre;
-
-private Direccion direccion_id;
-private Curso curso_id;
+//Relacion uno a uno Es útil cuando necesitas dividir información por razones de diseño, rendimiento, seguridad o modularidad. dividir datos opcionales o separar información sensible
+@OneToOne
+@JoinColumn(name ="direccion_id")
+private Direccion direccion;
+//private Curso curso_id;
 
 
 }
