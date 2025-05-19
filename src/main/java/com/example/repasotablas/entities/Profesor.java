@@ -2,6 +2,8 @@ package com.example.repasotablas.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,5 +21,6 @@ public class Profesor {
 private int id;
 private String nombre;
 @ManyToMany(mappedBy = "profesor")
+@JsonIgnoreProperties("profesor")
 private List<Curso> curso;
 }

@@ -33,7 +33,7 @@ public class DireccionRestController {
         return service.selectDireccionId(id);
     }
 
-    @PostMapping(value = "insert/")
+    @PostMapping(value = "insert")
     public Direccion insertDireccion(@RequestBody Direccion direccion) {
         return service.insertDireccion(direccion);
     }

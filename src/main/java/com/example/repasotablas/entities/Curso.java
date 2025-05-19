@@ -2,9 +2,12 @@ package com.example.repasotablas.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,10 +31,15 @@ public class Curso {
     // puede estar relacionada con muchas otras y viceversa. para campos adicionales
     // se debe crear una nueva entidad para la tabla intermedia adentro muchos a uno
     // y para afuera uno a muchos conlos list y el mappedby
-    @ManyToMany
-    @JoinTable(name = "curso-profesor", joinColumns = @JoinColumn(name = "curso_id"), inverseJoinColumns = @JoinColumn(name = "profesor_id"))
-    private List<Profesor> profesor;
+    @ManyToMany(fetch=FetchType.EAGER)
+    @JoinTable(
+        name = "curso_profesor", 
+        joinColumns = @JoinColumn(name = "curso_id"),
+        inverseJoinColumns = @JoinColumn(name = "profesor_id"))
+    @JsonIgnoreProperties("curso")
+        private List<Profesor> profesor;
     // se pone lista para no romper la relacion de muchos, wl orpharemoval indica que si quitas un estudiante de la lista tambien se borra de la base de datos
     @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("curso")
     private List<Estudiante> estudiante;
 }

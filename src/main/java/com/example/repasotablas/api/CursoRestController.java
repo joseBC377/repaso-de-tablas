@@ -33,7 +33,7 @@ public class CursoRestController {
         return service.selectCursoId(id);
     }
 
-    @PostMapping(value = "insert/")
+    @PostMapping(value = "insert")
     public Curso insertCurso(@RequestBody Curso curso) {
         return service.insertCurso(curso);
     }

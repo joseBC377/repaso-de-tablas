@@ -30,7 +30,7 @@ public List<Estudiante> selectEstudiante(){
 public Estudiante selecEstudianteId(@PathVariable int id){
     return service.selectEstudianteId(id);
 }
-@PostMapping(value = "insert/")
+@PostMapping(value = "insert")
 public Estudiante insertEstudiante(@RequestBody Estudiante estudiante){
     return service.insertEstudiante(estudiante);
 }

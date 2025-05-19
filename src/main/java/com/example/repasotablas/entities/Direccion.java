@@ -1,5 +1,8 @@
 package com.example.repasotablas.entities;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +27,7 @@ private String ciudad;
 //forma parte de la relació uno a uno, mappedby le dice que el dueño es dirección y cascada Permite que operaciones en una entidad afecten a otra automáticamente
 
 @OneToOne(mappedBy ="direccion", cascade = CascadeType.ALL)
+@JsonIgnoreProperties("direccion")
 private Estudiante estudiante;
 
 }

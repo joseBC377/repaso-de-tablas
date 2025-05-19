@@ -31,6 +31,8 @@ public class EstudianteService {
         Estudiante estudianteExistente = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Estudiante no encontrado con id :" + id));
         estudianteExistente.setNombre(estudiante.getNombre());
+        estudianteExistente.setCurso(estudiante.getCurso());
+        estudianteExistente.setDireccion(estudiante.getDireccion());
         return repository.save(estudianteExistente);
     }
 
