@@ -19,5 +19,6 @@
 ### ImagenesJSon imp
 - many to many
 ![Captura de pantalla 2025-05-18 192618](https://github.com/user-attachments/assets/30932d4a-a331-4f3f-ac3f-8583b458967f)
+
 - insercion de foraneas
 ![Captura de pantalla 2025-05-18 192539](https://github.com/user-attachments/assets/2639a5aa-ad4c-484c-8527-908c520500ad)
