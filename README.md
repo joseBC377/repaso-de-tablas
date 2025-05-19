@@ -21,4 +21,4 @@
 ![Captura de pantalla 2025-05-18 192618](https://github.com/user-attachments/assets/30932d4a-a331-4f3f-ac3f-8583b458967f)  
 <br>  
 - insercion de foraneas  
-![Captura de pantalla 2025-05-18 192539](https://github.com/user-attachments/assets/2639a5aa-ad4c-484c-8527-908c520500ad)
+![Captura de pantalla 2025-05-18 192618](https://github.com/user-attachments/assets/666ce2db-b9a4-46f3-afc0-265a72bf1bcf)
